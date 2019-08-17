@@ -8,44 +8,32 @@ namespace Stopwatch
 {
     class Stopwatch
     {
-        public DateTime Starting { get; set; }
-        public DateTime Ending { get; set; }
-
-        public TimeSpan Duration { get; set; }
-        public bool IsStarted { get; set; }
+        //Make the fields private so that they cannot be set from outside
+        private DateTime startTime;
+        private DateTime endTime;
+        private bool isStarted;
 
         public void Start()
         {
-            if (!IsStarted)
-            {
-                Starting = DateTime.Now;
-            }
-            else
-            {
-                throw new InvalidOperationException("The stopwatch is already started, you need to to stop it first to start it again!");
-            }
-            IsStarted = true;
+            if (isStarted)           
+                throw new InvalidOperationException("The stopwatch is already started, you need to to stop it first and then start it again!");
+          
+            startTime = DateTime.Now;
+            isStarted = true;           
         }
 
-        public TimeSpan Stop()
+        public void Stop()
         {
-            if(IsStarted)
-            {
-                Ending = DateTime.Now;
-            }
-            IsStarted = false;
-            return CalculateDuration();
+            if(!isStarted)            
+                throw new InvalidOperationException("The stopwatch has not yet started!");
+             
+            endTime = DateTime.Now;
+            isStarted = false;          
         }
 
-        public TimeSpan CalculateDuration()
+        public TimeSpan GetDuration()
         {
-            Duration = Ending - Starting;
-
-            //Reset starting and ending time
-            Starting = default(DateTime);
-            Ending = default(DateTime);
-
-            return Duration;
+            return endTime - startTime;            
         }
     }
 }
