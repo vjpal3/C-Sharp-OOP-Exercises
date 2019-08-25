@@ -8,14 +8,14 @@ namespace Algorithms
 {
     class Yahtzee
     {
-        private List<Die> Dice = new List<Die> ();
+        private List<DynamicDie> Dice = new List<DynamicDie> ();
         public int NumDice { get; set; }
-        public Yahtzee(int num)
+        public Yahtzee(int num, int sides)
         {
             this.NumDice = num;
             for (var i = 0; i < this.NumDice; i++)
             {
-                Dice.Add(new Die());
+                Dice.Add(new DynamicDie(sides));
             }
         }
 
@@ -41,7 +41,7 @@ namespace Algorithms
         {
             foreach (var item in Dice)
             {
-                Console.Write(item.sides[0] + "  ");
+                Console.Write(item.DieSides[0] + "  ");
             }
             Console.WriteLine();
             Console.WriteLine();
