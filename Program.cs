@@ -1,22 +1,102 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Exercises.Fields;
+using Exercises.Property;
 
-namespace EDX_OOP_Exercises
+namespace Exercises
 {
     class Program
     {
         static void Main(string[] args)
         {
-            var employee1 = new TechnicalEmployee("Ashka");
-            var employee2 = new TechnicalEmployee("Zamalya");
-            var employee3 = new BusinessEmployee("Esther");
+            //Run code for Properties
+            var person = new Person(new DateTime(1983, 01, 01));
+            Console.WriteLine(person.Birthdate); 
+            Console.WriteLine("Age: " + person.Age);
+            
+            // Run code for Fields
+            //var customer = new Customer(3);
+            //customer.orders.Add(new Order());
+            //customer.orders.Add(new Order());
 
-            Console.WriteLine(employee1.EmployeeStatus());
-            Console.WriteLine(employee2.EmployeeStatus());
-            Console.WriteLine(employee3.EmployeeStatus());
+            //Console.WriteLine("Customer Orders: " + customer.orders.Count);
+            
+            // Run WorkFlowEngine
+            //var workflow = new WorkFlow();
+
+            //workflow.Add(new UploadVideo());
+            //workflow.Add(new EncodeVideo());
+
+            //var sendMail = new SendMail();
+            //workflow.Add(sendMail);
+            //workflow.Remove(sendMail);
+
+            //var workFlowEngine = new WorkFlowEngine();
+            //workFlowEngine.Run(workflow);
+
+            
+            //Implement Stack
+            //var stack = new Stack();
+            //try
+            //{
+            //    //stack.Push(null);   //Throws invalid operation exception
+            //    //stack.Pop();          //Throws invalid operation exception
+            //    stack.Push(1);
+            //    stack.Push(2);
+            //    stack.Push(3);
+            //    Console.WriteLine(stack.Pop());
+            //    Console.WriteLine(stack.Pop());
+            //    Console.WriteLine(stack.Pop());
+            //    //stack.Clear();
+            //    Console.WriteLine(stack.Pop()); //Throws invalid operation exception             
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);              
+            //}
+           
+
+            //Design a Stackoverflow Post
+            //var post = new StackOverflowPost("What is a NullReferenceException, and how do I fix it?", "The runtime throwing a NullReferenceException always means the same thing: you are trying to use a reference, and the reference is not initialized");
+
+            //post.Upvote();
+            //post.Upvote();
+            //post.Upvote();
+            //post.Downvote();
+            //post.Downvote();
+            //post.Upvote();
+            //post.Downvote();
+            //post.Downvote();
+            //post.Downvote();
+            //post.Downvote();
+
+            //Console.WriteLine("Currrent Vote value: " + post.GetVote());
+
+            //Design a Stopwatch
+            //try
+            //{
+            //    var stopwatch = new Stopwatch();
+            //    Console.WriteLine("Stopwatch started:");
+            //    stopwatch.Start();
+            //    //stopwatch.Start();    //Throws invalid operation exception
+            //    System.Threading.Thread.Sleep(3000);
+            //    Console.WriteLine("Stopwatch is about to stop");
+            //    stopwatch.Stop();
+            //    Console.WriteLine("Duration: " + Math.Round(stopwatch.GetDuration().TotalSeconds) + " seconds");
+
+            //    Console.WriteLine();
+
+            //    Console.WriteLine("Stopwatch started:");
+            //    stopwatch.Start();
+            //    System.Threading.Thread.Sleep(2000);
+            //    Console.WriteLine("Stopwatch is about to stop");
+            //    stopwatch.Stop();
+            //    Console.WriteLine("Duration: " + Math.Round(stopwatch.GetDuration().TotalSeconds) + " seconds");
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+
         }
     }
 }
