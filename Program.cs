@@ -1,6 +1,7 @@
 ﻿using System;
 using Exercises.Fields;
 using Exercises.Property;
+using Exercises.Indexers;
 
 namespace Exercises
 {
@@ -8,18 +9,25 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
+            //Run code for Indexers
+            var cookie = new HttpCookie();
+            cookie["name"] = "Vrishali";
+            cookie["profession"] = "Developer";
+            Console.WriteLine(cookie["name"]);
+            Console.WriteLine(cookie["profession"]);
+
             //Run code for Properties
-            var person = new Person(new DateTime(1983, 01, 01));
-            Console.WriteLine(person.Birthdate); 
-            Console.WriteLine("Age: " + person.Age);
-            
+            //var person = new Person(new DateTime(1983, 01, 01));
+            //Console.WriteLine(person.Birthdate); 
+            //Console.WriteLine("Age: " + person.Age);
+
             // Run code for Fields
             //var customer = new Customer(3);
             //customer.orders.Add(new Order());
             //customer.orders.Add(new Order());
 
             //Console.WriteLine("Customer Orders: " + customer.orders.Count);
-            
+
             // Run WorkFlowEngine
             //var workflow = new WorkFlow();
 
@@ -33,7 +41,6 @@ namespace Exercises
             //var workFlowEngine = new WorkFlowEngine();
             //workFlowEngine.Run(workflow);
 
-            
             //Implement Stack
             //var stack = new Stack();
             //try
@@ -53,7 +60,7 @@ namespace Exercises
             //{
             //    Console.WriteLine(e.Message);              
             //}
-           
+
 
             //Design a Stackoverflow Post
             //var post = new StackOverflowPost("What is a NullReferenceException, and how do I fix it?", "The runtime throwing a NullReferenceException always means the same thing: you are trying to use a reference, and the reference is not initialized");
@@ -96,7 +103,6 @@ namespace Exercises
             //{
             //    Console.WriteLine(e.Message);
             //}
-
         }
     }
 }
