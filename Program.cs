@@ -2,6 +2,8 @@
 using Exercises.Fields;
 using Exercises.Property;
 using Exercises.Indexers;
+using Exercises.Composition;
+using Exercises.Casting;
 
 namespace Exercises
 {
@@ -9,12 +11,34 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
+            //Run code for Casting
+            // Upcasting
+            //Text text = new Text();
+            //Shape shape = text;  //Upcasting (implicit), both shape and text are ref. to same object in memory
+            //text.Width = 200;
+            //shape.Width = 100;
+            //Console.WriteLine(text.Width); // 100  
+
+            //Downcasting
+            Shape shape = new Text();
+            // At compile-time, shape is of type Shape; At run-time, shape is of type Text. So the properties of Text are not visible to shape obj at compile time.
+            Text text = (Text) shape; // Downcasting
+            // The properties of Text are visible to shape obj at compile time.
+            Console.WriteLine("FontSize: " + text.FontSize); 
+
+            //Run code for Composition
+            //var migrator = new DBMigrator(new Logger());
+            //var installer = new Installer(new Logger());
+
+            //migrator.Migrate();
+            //installer.Install();
+
             //Run code for Indexers
-            var cookie = new HttpCookie();
-            cookie["name"] = "Vrishali";
-            cookie["profession"] = "Developer";
-            Console.WriteLine(cookie["name"]);
-            Console.WriteLine(cookie["profession"]);
+            //var cookie = new HttpCookie();
+            //cookie["name"] = "Vrishali";
+            //cookie["profession"] = "Developer";
+            //Console.WriteLine(cookie["name"]);
+            //Console.WriteLine(cookie["profession"]);
 
             //Run code for Properties
             //var person = new Person(new DateTime(1983, 01, 01));
@@ -97,7 +121,9 @@ namespace Exercises
             //    System.Threading.Thread.Sleep(2000);
             //    Console.WriteLine("Stopwatch is about to stop");
             //    stopwatch.Stop();
-            //    Console.WriteLine("Duration: " + Math.Round(stopwatch.GetDuration().TotalSeconds) + " seconds");
+            //    //stopwatch.Stop();
+            //    //Console.WriteLine("Duration: " + Math.Round(stopwatch.GetDuration().TotalSeconds) + " seconds");
+            //    Console.WriteLine("{0:F3} seconds", stopwatch.GetDuration().TotalSeconds);
             //}
             //catch (Exception e)
             //{
