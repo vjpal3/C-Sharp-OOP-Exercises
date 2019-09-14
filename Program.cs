@@ -22,7 +22,8 @@ namespace Exercises
             //Downcasting
             //Shape shape = new Text();
 
-            // At compile-time, shape is of type Shape; At run-time, shape is of type Text. So the properties of Text are not visible to shape obj at compile time.
+            // At compile-time, shape is of type Shape; At run-time, shape is of type Text. 
+            //So the properties of Text are not visible to shape obj at compile time.
             //Text text = (Text) shape; // Downcasting, may throw an InvalidCastException if conversion is unsuccessful.
             // The properties of Text are visible to shape obj at compile time.
             //Console.WriteLine("FontSize: " + text.FontSize); 
@@ -30,7 +31,8 @@ namespace Exercises
             //Alternatively downcasting can be done this way:
             Shape shape = new Text();
             // 'as' keyword
-            //Text text = shape as Text;// 'as' keyword returns null if conversion is unsuccessful. If successful, it converts the object to target type.
+            //Text text = shape as Text;// 'as' keyword returns null if conversion is unsuccessful. 
+            //If successful, it converts the object to target type.
             //if (shape != null)
             //{
             //    Console.WriteLine("FontSize: " + text.FontSize);
