@@ -20,11 +20,28 @@ namespace Exercises
             //Console.WriteLine(text.Width); // 100  
 
             //Downcasting
-            Shape shape = new Text();
+            //Shape shape = new Text();
+
             // At compile-time, shape is of type Shape; At run-time, shape is of type Text. So the properties of Text are not visible to shape obj at compile time.
-            Text text = (Text) shape; // Downcasting
+            //Text text = (Text) shape; // Downcasting, may throw an InvalidCastException if conversion is unsuccessful.
             // The properties of Text are visible to shape obj at compile time.
-            Console.WriteLine("FontSize: " + text.FontSize); 
+            //Console.WriteLine("FontSize: " + text.FontSize); 
+
+            //Alternatively downcasting can be done this way:
+            Shape shape = new Text();
+            // 'as' keyword
+            //Text text = shape as Text;// 'as' keyword returns null if conversion is unsuccessful. If successful, it converts the object to target type.
+            //if (shape != null)
+            //{
+            //    Console.WriteLine("FontSize: " + text.FontSize);
+            //}
+
+            // 'is' keyword
+            if(shape is Text)
+            {
+                var text = (Text) shape;
+                Console.WriteLine("FontSize: " + text.FontSize);
+            }
 
             //Run code for Composition
             //var migrator = new DBMigrator(new Logger());
