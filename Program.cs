@@ -4,6 +4,9 @@ using Exercises.Property;
 using Exercises.Indexers;
 using Exercises.Composition;
 using Exercises.Casting;
+using Exercises.Polymorphism;
+using System.Collections.Generic;
+using Shape = Exercises.Polymorphism.Shape;
 
 namespace Exercises
 {
@@ -11,6 +14,18 @@ namespace Exercises
     {
         static void Main(string[] args)
         {
+            // Run Code for Polymorphism
+            var shapes = new List<Shape> ();
+            // Polymorphism at work #1: a Rectangle and Circle
+            // can all be used whereever a Shape is expected. No cast is required
+            // because an implicit conversion exists from a derived 
+            // class to its base class.
+            shapes.Add(new Circle());
+            shapes.Add(new Rectangle());
+
+            var canvas = new Canvas();
+            canvas.DrawShapes(shapes);
+            
             //Run code for Casting
             // Upcasting
             //Text text = new Text();
@@ -18,6 +33,10 @@ namespace Exercises
             //text.Width = 200;
             //shape.Width = 100;
             //Console.WriteLine(text.Width); // 100  
+
+            // Downcasting - Runtime InvalidCastException
+            //Shape shape = new Shape();
+            //Text text = (Text)shape;  // Runtime InvalidCastException
 
             //Downcasting
             //Shape shape = new Text();
@@ -29,7 +48,7 @@ namespace Exercises
             //Console.WriteLine("FontSize: " + text.FontSize); 
 
             //Alternatively downcasting can be done this way:
-            Shape shape = new Text();
+            //Shape shape = new Text();
             // 'as' keyword
             //Text text = shape as Text;// 'as' keyword returns null if conversion is unsuccessful. 
             //If successful, it converts the object to target type.
@@ -39,11 +58,11 @@ namespace Exercises
             //}
 
             // 'is' keyword
-            if(shape is Text)
-            {
-                var text = (Text) shape;
-                Console.WriteLine("FontSize: " + text.FontSize);
-            }
+            //if(shape is Text)
+            //{
+            //    var text = (Text) shape;
+            //    Console.WriteLine("FontSize: " + text.FontSize);
+            //}
 
             //Run code for Composition
             //var migrator = new DBMigrator(new Logger());

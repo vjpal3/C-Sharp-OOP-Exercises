@@ -1,15 +1,16 @@
-﻿using System;
+﻿using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Exercises.Casting
+namespace Exercises.Polymorphism
 {
     class Shape
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public int X { get; set; }
-        public int Y { get; set; }
+        public Position position { get; set; }
 
-        public void Draw()
+        public virtual void Draw()
         {
 
         }
