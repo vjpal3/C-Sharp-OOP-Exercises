@@ -4,15 +4,13 @@ using System.Threading.Tasks;
 
 namespace Exercises.Polymorphism
 {
-    class Shape
+    abstract class Shape
     {
         public int Width { get; set; }
         public int Height { get; set; }
         public Position position { get; set; }
 
-        public virtual void Draw()
-        {
-
-        }
+        public abstract void Draw();
+       
     }
 }
